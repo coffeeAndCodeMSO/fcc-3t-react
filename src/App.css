@@ -18,11 +18,22 @@
   font-size: large;
 }
 
-.NumberList {
-  list-style: none;
+.Board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 150px;
+  height: 150px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.Square {
+  background-color: red;
+  width: 50px;
+  height: 50px;
+}
+
+.BoardContainer {
+  display: flex;
+  align-items: center;
 }
