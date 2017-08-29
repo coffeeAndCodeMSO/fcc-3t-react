@@ -15,8 +15,22 @@ export default class App extends Component {
       board: ["","","","","","","","",""],
       playerChar1: "",
       playerChar2: "",
-      player1Turn: true
+      player1Turn: true,
+      winOptions: [
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
+        [2,4,8],
+      ]
     };
+  }
+
+  componentDidUpdate() {
+    this.checkWin();
   }
 
   setPlayerChar = (char) => {
@@ -53,6 +67,17 @@ export default class App extends Component {
     } else {
       console.log("you lie!");
     }
+  }
+
+  checkWin () {
+    this.state.winOptions.forEach(current => {
+      let str = this.state.board[current[0]] + this.state.board[current[1]] + this.state.board[current[2]]
+      if (str === 'XXX') {
+        console.log('player with X wins')
+      } else if (str == 'OOO'){
+        console.log('player with O wins')
+      }
+    })
   }
 
   computerPlay = () => {
