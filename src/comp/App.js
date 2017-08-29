@@ -30,6 +30,7 @@ export default class App extends Component {
   }
 
   componentDidUpdate() {
+    if(this.state.plays >= 3)
     this.checkWin();
   }
 
@@ -73,9 +74,9 @@ export default class App extends Component {
     this.state.winOptions.forEach(current => {
       let str = this.state.board[current[0]] + this.state.board[current[1]] + this.state.board[current[2]]
       if (str === 'XXX') {
-        console.log('player with X wins')
+        console.log('player with X wins');
       } else if (str == 'OOO'){
-        console.log('player with O wins')
+        console.log('player with O wins');
       }
     })
   }
@@ -83,10 +84,6 @@ export default class App extends Component {
   computerPlay = () => {
     let computerPlay = Math.floor(Math.random() * 9);
     console.log(computerPlay);
-
-  }
-
-  isGameOver() {
 
   }
 
