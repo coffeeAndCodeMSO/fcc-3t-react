@@ -84,7 +84,6 @@ export default class App extends Component {
   computerPlay = () => {
     let computerPlay = Math.floor(Math.random() * 9);
     console.log(computerPlay);
-
   }
 
   render() {
